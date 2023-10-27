@@ -1,5 +1,13 @@
-export default function Home() {
+"use client"
+
+import { Modal } from "@/components/ui/modal"
+
+export default function SetupPage() {
   return (
-    <div>Home Page</div>    
+    <div>
+      <Modal title="Modal" description="test description" isOpen onClose={() => {}}>
+        Children
+      </Modal>
+    </div>    
   )
 }
