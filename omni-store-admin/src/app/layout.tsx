@@ -1,11 +1,12 @@
+import "../styles/globals.css"
+
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { ClerkProvider } from "@clerk/nextjs"
 import { ptBR } from "@clerk/localizations"
 
 import { ModalProvider } from "@/providers/modal-provider"
-
-import "../styles/globals.css"
+import { ToasterProvider } from "@/providers/toast-provider"
 
 const inter = Inter({ subsets: ["latin"] })
 
@@ -24,6 +25,7 @@ export default function RootLayout({
       <html lang="pt-br">
         <body className={inter.className}>
           <ModalProvider />
+          <ToasterProvider />
           {children}
         </body>
       </html>
