@@ -24,11 +24,9 @@ export const StoreModal = () => {
 
   const onSubmit = async (data: NewStoreInput) => {
     try {
-      await axios.post("/api/store", data)
+      const response = await axios.post("/api/store", data)
 
-      toast.success("Loja criada.")
-
-      newStoreForm.reset()
+      window.location.assign(`${response.data.id}`)
     } catch (error) {
       console.log("[CREATE STORE MODAL]", error)
       toast.error("Algo deu errado.")
