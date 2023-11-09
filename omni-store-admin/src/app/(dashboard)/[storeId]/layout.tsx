@@ -1,6 +1,7 @@
 import { auth } from "@clerk/nextjs"
 import { redirect } from "next/navigation"
 
+import { Navbar } from "@/components/navbar"
 import { prismadb } from "@/lib/prismadb"
 
 interface DashboardLayoutProps {
@@ -29,7 +30,7 @@ export default async function DashboardLayout({
   
   return (
     <>
-      <div>Future navbar</div>
+      <Navbar />
       {children}
     </>
   )
